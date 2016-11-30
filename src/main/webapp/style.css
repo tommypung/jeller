@@ -1,0 +1,220 @@
+@font-face {
+	font-family: Gillsans;
+	src: url("gillsanslight.ttf") format("truetype");
+}
+
+body {
+	background: rgb(57, 109, 166);
+	color: white;
+	old-margin: 8vw 5vw 5vw 5vw;
+	margin: 7vw 5vw 5vw 5vw;
+
+	font-family: Gillsans, 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+	font-size: 5vw;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 100;
+	line-height: 7vw;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+h1 {
+	margin: 0;
+	padding: 0;
+	display: block;
+	text-align: left;
+	font-size: 9vw;
+	font-weight: 300;
+	display: block;
+	line-height: 10vw;
+	margin-bottom: 0.5vw;
+}
+
+h2 {
+	margin: 0;
+	padding: 0;
+	font-weight: 100;
+	font-size: 5vw;
+	margin-bottom: 2vh;
+}
+
+span.welcome {
+	display: block;
+	text-align: left;
+	font-size: 9vw;
+	font-weight: 300;
+	display: block;
+	line-height: 10vw;
+	margin-bottom: 0.5vw;
+}
+
+.icon, .icon svg {
+	width: 15vh;
+	height: 15vh;
+}
+
+.icon {
+    margin: 1vh 2vw 2vh 1vw;
+}
+
+.unselectable {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.icon.moreAlternatives, .icon.moreAlternatives.disabled {
+	opacity: 0.1;
+}
+
+.icon.disabled {
+	opacity: 0.2;
+}
+
+.icon.loading {
+	background: yellow;
+}
+
+div.devices {
+	
+}
+
+.device.moreAlternatives {
+	border: 1px solid white;
+}
+
+.device.moreAlternatives .separator {
+	position: absolute;
+	width: 1vw;
+	height: 17vh;
+	top: 0.5vh;
+	left: 8.5vh;
+	border-left: 1px dotted white;
+}
+
+.device {
+	display: inline-block;
+	position: relative;
+}
+
+.bottomPanel {
+	display: block;
+	height: 8vw;
+	position: fixed;
+	background: rgb(57, 109, 166);
+	width: 100%;
+	bottom: 0;
+}
+
+.rightBottom {
+	display: block;
+	height: 7vw;
+	position: fixed;
+	bottom: 1vw;
+	right: 2vw;
+	text-align: right;
+}
+
+.leftBottom {
+	display: block;
+	height: 7vw;
+	position: fixed;
+	bottom: 1vw;
+	left: 2vw;
+	text-align: left;
+}
+
+.bookmarkIcon {
+	position: absolute;
+	top: 5.2vh;
+	right: 0.5vh;
+}
+
+.bookmarkIcon svg {
+	width: 7vh;
+	height: 7vh;
+}
+
+.bookmarkIcon svg polygon {
+	stroke: white;
+	fill: transparent;
+}
+
+.bookmarkIcon.bookmarked svg polygon {
+	stroke: yellow;
+	fill: yellow;
+}
+
+.pencilIcon {
+	position: absolute;
+	top: 5.5vh;
+	left: 0.5vh;
+}
+
+.pencilIcon svg {
+	width: 7vh;
+	height: 7vh;
+	fill: white;
+}
+
+.iconPreview {
+	display: inline-block;
+	margin: 1vw;
+}
+
+.iconPreview.selected svg {
+	fill: white;
+	border: 1px solid white;
+}
+
+.iconPreview svg {
+	width: 10vw;
+	height: 10vw;
+}
+
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px dotted white;
+    font-size: 5vw;
+    color: white;
+    margin-bottom: 2vw;
+}
+
+input:focus {
+	border-bottom: 1px solid white;
+	outline: none;
+	color: yellow;
+}
+
+h2.section {
+	margin-top: 1vw;
+}
+
+h2.section.open {
+	margin-top: 2vw;
+}
+
+.sectionContent {
+	margin-bottom: 10vw;
+}
+
+.reverseModal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: green;
+    z-index: 1;
+}
+
+.reverseModal .window {
+	margin: 5vw;
+}
+
+.reverseModal .close {
+	text-align: left;
+}

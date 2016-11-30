@@ -1,0 +1,7 @@
+.classpath
+.externalToolBuilders
+.project
+.settings
+maven-eclipse.xml
+target
+*~

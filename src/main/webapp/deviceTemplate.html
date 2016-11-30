@@ -1,0 +1,13 @@
+<div
+	class="icon"
+	ng-click="toggle(device)"
+	on-long-press="moreAlternatives(device)"
+	on-touch-end="touchEnd(device)"
+	ng-include="device.icon"
+	ng-class="{disabled : !device.powered, loading : device.loading, moreAlternatives : device.moreAlternatives}">
+</div>
+<div ng-if="device.moreAlternatives" class="bookmarkIcon" ng-class="{bookmarked : device.bookmarked}" ng-click="bookmarkToggle(device)" ng-include="'star.svg'">
+</div>
+<div ng-if="device.moreAlternatives" class="pencilIcon" ng-click="gotoEditDevice(device)" ng-include="'pencil.svg'">
+</div>
+<div ng-if="device.moreAlternatives" class="separator"></div>

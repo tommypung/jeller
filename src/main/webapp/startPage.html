@@ -1,0 +1,13 @@
+<div>
+	<h1>Hej!</h1>
+
+	<h2>Klicka nedan för att styra strömmen till dina favoritenheter</h2>
+
+	<div class="devices">
+		<div ng-include="'deviceTemplate.html'" class="device" ng-repeat="device in devices" ng-class="{disabled : !device.powered, loading : device.loading, moreAlternatives : device.moreAlternatives}">
+		</div>
+	</div>
+
+	<span ng-click="gotoAllUnits()" class="rightBottom">Alla enheter ></span>
+
+</div>

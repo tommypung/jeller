@@ -1,0 +1,12 @@
+<div class="reverseModal">
+	<div class="window">
+		<div ng-click="reverseLearnClose()" class="close">X</div>
+
+		<h1>Kopiera en fjärrkontroll</h1>
+		<h2>Skicka en signal med en fjärrkontroll för att kopiera de tekniska inställningarna, sedan väljer du rätt fjärrkontroll i listan nedan.</h2>
+
+		<div class="reverseDevice" ng-repeat="device in reverseLearnDevices" ng-click="reverseLearnClose();reverseLearnReturn(device)">
+			{{device.protocol}} - {{device.model}} - {{device.house}} - {{device.unit}}
+		</div>
+	</div>
+</div>

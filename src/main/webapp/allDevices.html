@@ -1,0 +1,16 @@
+<div class="allDevices">
+	<h1>Alla enheter</h1>
+
+	<h2>Här är enheterna grupperade efter våning och rum. Långklicka för fler alternativ.</h2>
+
+	<div class="devices">
+		<div ng-include="'deviceTemplate.html'" class="device" ng-repeat="device in devices" ng-class="{disabled : !device.powered, loading : device.loading, moreAlternatives : device.moreAlternatives}">
+		</div>
+	</div>
+
+	<div class="bottomPanel">
+		<span ng-click="gotoAddNewDevice()" class="leftBottom">+ Lägg till enhet</span>
+		<span ng-click="back()" class="rightBottom">Tillbaka ></span>
+	</div>
+
+</div>

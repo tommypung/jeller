@@ -1,0 +1,57 @@
+<div ng-if="device.id">
+	<h1>{{device.name}}</h1>
+
+	<h2 ng-if="state=='add'">Ändra inställningar, namn och ikon för denna enhet.</h2>
+</div>
+<div ng-if="!device.id">
+	<h1>Lägg till en enhet</h1>
+
+	<h2>Ange inställningar, namn och ikon för denna enhet.</h2>
+</div>
+
+<div ng-show="reverseLearnModal" ng-include="'reverseLearnModal.html'">
+</div>
+
+<div ng-switch="state">
+	<div ng-switch-when="add">
+		<h2 ng-click="information=!information" class="section" ng-class="{open : information}">Information ></h2>
+		<div class="sectionContent" ng-show="information">
+			<input type="text" name="name" placeholder="Name, ex: Window lights" ng-model="device.name"/><br/>
+			<input type="text" name="room" placeholder="Room, ex: Bedroom" ng-model="device.room"/><br/>
+			<input type="text" name="floor" placeholder="Floor, ex: Downstairs" ng-model="device.floor"/><br/>
+		</div>
+
+		<h2 class="section" ng-click="technicalData = !technicalData" ng-class="{open : technicalData}">Teknisk data ></h2>
+		<div class="sectionContent" ng-show="technicalData">
+			<input type="text" name="model" placeholder="Model, ex: codeswitch, selflearning" ng-model="device.model"/><br/>
+			<input type="text" name="protocol" placeholder="Protocol, ex: arctech, waveman" ng-model="device.protocol"/><br/>
+			<input type="text" name="house" placeholder="House, random number" ng-model="device.house"/><br/>
+			<input type="text" name="unit" placeholder="Unit, random number" ng-model="device.unit"/><br/>
+			<input type="text" name="hwretries" placeholder="Hardware retries, 0-20" ng-model="device.hwretries"/><br/>
+			<input type="text" name="swretries" placeholder="Software retries, 0-20" ng-model="device.swretries"/><br/>
+			<span class="reverseLearn" ng-click="reverseLearn()">&lt;&lt;Kopiera en fjärrkontroll&gt;&gt;</span>
+		</div>
+
+		<h2 class="section" ng-click="icon = !icon" ng-class="{open : icon}">Ikon ></h2>
+		<div class="sectionContent" ng-show="icon">
+			<div
+				class="iconPreview"
+				ng-repeat="icon in icons"
+				ng-class="{selected : icon==device.icon}"
+				ng-include="icon"
+				ng-click="device.icon = icon">
+			</div>
+		</div>
+
+		<div class="bottomPanel">
+			<span ng-click="save()" class="leftBottom">&lt; Spara förändringar</span>
+			<span ng-click="back()" class="rightBottom">Tillbaka ></span>
+		</div>
+	</div>
+
+	<div ng-switch-when="learn">
+		Följande enhet är sparad #{{device.id}} - {{device.name}} i {{device.room}} på {{device.floor}}.<br/>
+		<br/>
+		Klicka <span ng-click="back()">Tillbaka ></span> för att börja använda din enhet.
+	</div>
+</div>

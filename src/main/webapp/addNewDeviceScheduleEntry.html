@@ -1,0 +1,14 @@
+Add a new device schedule entry<br/>
+
+<div ng-switch="state">
+	<div ng-switch-when="add">
+		<input type="text" name="description" placeholder="Description, ex: Lights off - night time" ng-model="entry.description"/><br/>
+		<input type="text" name="enforceDelay" placeholder="Enforce Delay (seconds), ex: 60" ng-model="entry.enforceDelay"/><br/>
+		<input type="text" name="resendInterval" placeholder="Resend Interval (seconds), ex: 600" ng-model="entry.resendInterval"/><br/>
+		<input type="text" name="startHour" placeholder="Start hour, ex: 22" ng-model="entry.startHour"/><br/>
+		<input type="text" name="startMinute" placeholder="Start hour, ex: 0" ng-model="entry.startMinute"/><br/>
+		<input type="text" name="value" placeholder="Value, ex: 0 or 1" ng-model="entry.value"/><br/>
+
+		<button ng-click="save()" ng-disabled="sending">{{(sending) ? 'Saving...' : 'Save Entry'}}</button>
+	</div>
+</div>

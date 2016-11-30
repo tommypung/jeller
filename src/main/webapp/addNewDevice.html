@@ -1,0 +1,24 @@
+<h1>{{device.name}}</h1>
+
+<h2>Ändra inställningar, namn och ikon för denna enhet.</h2>
+
+<div ng-switch="state">
+	<div ng-switch-when="add">
+		<input type="text" name="name" placeholder="Name, ex: Window lights" ng-model="device.name"/><br/>
+		<input type="text" name="room" placeholder="Room, ex: Bedroom" ng-model="device.room"/><br/>
+		<input type="text" name="floor" placeholder="Floor, ex: Downstairs" ng-model="device.floor"/><br/>
+		<input type="text" name="model" placeholder="Model, ex: codeswitch, selflearning" ng-model="device.model"/><br/>
+		<input type="text" name="protocol" placeholder="Protocol, ex: arctech, waveman" ng-model="device.protocol"/><br/>
+		<input type="text" name="house" placeholder="House, random number" ng-model="device.house"/><br/>
+		<input type="text" name="unit" placeholder="Unit, random number" ng-model="device.unit"/><br/>
+
+		<button ng-click="save()" ng-disabled="sending">{{(sending) ? 'Saving...' : 'Save Device'}}</button>		
+	</div>
+
+	<div ng-switch-when="learn">
+		New device added #{{device.id}} - {{device.name}} in {{device.room}} on {{device.floor}}.<br/>
+		Do you need to learn a device right away?<br/>
+
+		<button ng-click="learn()" ng-disabled="sending">{{(sending) ? 'Learning...' : 'Learn Device'}}</button>
+	</div>
+</div>
