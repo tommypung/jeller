@@ -12,7 +12,7 @@ angular.module('jeller', ['ngRoute'])
 }])
 .controller('RootController', function($scope, $http, $location, $window, $timeout) {
 	$scope.devices = [];
-	$scope.icons = ["airballoon.svg", "balloon.svg", "bed.svg","candle.svg","car.svg","christmastree.svg","computer.svg","desklamp.svg","door.svg","lantern.svg","leaf.svg","lightbulb.svg","moon.svg","nightstand.svg","owl.svg","sofa.svg","stove.svg","tub.svg","tv.svg"];
+	$scope.icons = ["icons/airballoon.svg", "icons/balloon.svg", "icons/bed.svg","icons/candle.svg","icons/car.svg","icons/christmastree.svg","icons/computer.svg","icons/desklamp.svg","icons/door.svg","icons/lantern.svg","icons/leaf.svg","icons/lightbulb.svg","icons/moon.svg","icons/nightstand.svg","icons/owl.svg","icons/sofa.svg","icons/stove.svg","icons/tub.svg","icons/tv.svg"];
 	$scope.vibrate = function() {
 		navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
 		if (navigator.vibrate)
