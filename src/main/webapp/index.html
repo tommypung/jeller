@@ -15,5 +15,14 @@
 <a href="#addNewDevice">Add new device</a><br/>
  -->
 	<div ng-view></div>
+
+<script type='application/javascript' src='fastclick.js'></script>
+<script type="text/javascript">
+if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+    }, false);
+}
+</script>
 </body>
 </html>
