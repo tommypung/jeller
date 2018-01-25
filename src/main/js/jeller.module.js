@@ -11,6 +11,29 @@ angular.module('jeller', ['ngRoute'])
 	})
 }])
 .controller('RootController', function($scope, $http, $location, $window, $timeout) {
+	$scope.notifications = [];
+	function addNotification(msg, ttl) {
+		console.log("Adding notification: " + msg);
+		$scope.notifications.push({ msg : msg, ttl: ttl });
+	}
+
+	navigator.serviceWorker.addEventListener('message', function handler (event) {
+		console.log("Incoming data", event.data);
+		if (event.data.action == "downloading-files") {
+			$scope.$apply(function() {
+				addNotification("Uppdaterar " + event.data.payload.length + " filer");
+			});
+		}
+
+		if (event.data.action == "new-files")
+		{
+			console.log("switch working - payload.length = " + event.data.payload.length);
+			$scope.$apply(function() {
+				addNotification("En ny version av jeller finns tillgänglig, ladda om sidan.", 5000);
+			}); 
+		}
+	});
+
 	$scope.devices = [];
 	$scope.icons = ["icons/airballoon.svg", "icons/balloon.svg", "icons/bed.svg","icons/candle.svg","icons/car.svg","icons/christmastree.svg","icons/computer.svg","icons/desklamp.svg","icons/door.svg","icons/lantern.svg","icons/leaf.svg","icons/lightbulb.svg","icons/moon.svg","icons/nightstand.svg","icons/owl.svg","icons/sofa.svg","icons/stove.svg","icons/tub.svg","icons/tv.svg"];
 	$scope.vibrate = function() {

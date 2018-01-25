@@ -14,6 +14,9 @@
 <!--  <a href="#">Start page</a><br/>
 <a href="#addNewDevice">Add new device</a><br/>
  -->
+ 	<div ng-repeat="notif in notifications">
+ 		{{notif.msg}}
+ 	</div>
 	<div ng-view></div>
 
 <script type='application/javascript' src='js/fastclick.js'></script>
@@ -22,6 +25,19 @@ if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function() {
         FastClick.attach(document.body);
     }, false);
+}
+</script>
+<!-- fitta6 -->
+<script type="text/javascript">
+if('serviceWorker' in navigator) {
+	  navigator.serviceWorker
+	           .register('/generated-sw.js')
+	           .then(function() { console.log("Service Worker Registered"); setupMessaging(); });
+
+	  function setupMessaging() {
+		  console.log("Calling setupMessaging();");
+//		    navigator.serviceWorker.controller.postMessage("Hello", [messageChannel.port2]);
+	  }
 }
 </script>
 </body>

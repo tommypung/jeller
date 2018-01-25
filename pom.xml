@@ -196,6 +196,19 @@
 					</archive>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.svearike</groupId>
+				<artifactId>maven-serviceworker-generator</artifactId>
+				<version>1.0.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate-service-worker</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 </project>
