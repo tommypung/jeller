@@ -23,6 +23,7 @@ import org.svearike.jeller.api.AddNewDeviceServlet;
 import org.svearike.jeller.api.GetDeviceServlet;
 import org.svearike.jeller.api.GetDevicesServlet;
 import org.svearike.jeller.api.GetLastUsedDevicesServlet;
+import org.svearike.jeller.api.LearnDeviceServlet;
 import org.svearike.jeller.api.ToggleDeviceServlet;
 import org.svearike.jeller.api.UpdateDeviceServlet;
 import org.svearike.jeller.logic.DatabaseLogic;
@@ -87,6 +88,7 @@ public class Main
 		handler.addServletWithMapping(UpdateDeviceServlet.class, "/api/updateDevice/*");
 		handler.addServletWithMapping(ToggleDeviceServlet.class, "/api/toggleDevice/*");
 		handler.addServletWithMapping(GetDevicesServlet.class, "/api/getDevices");
+		handler.addServletWithMapping(LearnDeviceServlet.class, "/api/learnDevice");
 		handler.addServletWithMapping(GetDeviceServlet.class, "/api/getDevice/*");
 		handler.addServletWithMapping(AcmeServlet.class, "/.well-known/acme-challenge/*");
 		handler.addServletWithMapping(GetLastUsedDevicesServlet.class, "/api/getLastUsedDevices/*");

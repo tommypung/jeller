@@ -119,4 +119,9 @@ public class DeviceLogic
 		if (lastUsedDevices.size() > 30)
 			lastUsedDevices.remove(30);
 	}
+
+	public void learnDevice(Device device) throws IllegalStateException, IOException
+	{
+		tellerClient.tdLearn(device.getId());
+	}
 }

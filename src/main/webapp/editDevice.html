@@ -52,6 +52,10 @@
 	<div ng-switch-when="learn">
 		Följande enhet är sparad #{{device.id}} - {{device.name}} i {{device.room}} på {{device.floor}}.<br/>
 		<br/>
-		Klicka <span ng-click="back()">Tillbaka ></span> för att börja använda din enhet.
+		Vill du para ihop din enhet med en strömbrytare?<br/>
+
+		Klicka <button ng-click="learn()" ng-disabled="sending">{{(sending) ? 'Parar ihop...' : 'Para ihop'}}</button><br/>
+		
+		Annars klicka <span ng-click="back()">Tillbaka ></span> för att börja använda din enhet.
 	</div>
 </div>
