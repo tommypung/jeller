@@ -2,6 +2,7 @@ package org.svearike.jeller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -18,6 +19,7 @@ import org.eclipse.jetty.server.ssl.SslSocketConnector;
 import org.eclipse.jetty.servlet.ServletHandler;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
 import org.svearike.jeller.acme.AcmeServlet;
+import org.svearike.jeller.acme.LetsEncrypt;
 import org.svearike.jeller.api.AddNewDeviceScheduleEntryServlet;
 import org.svearike.jeller.api.AddNewDeviceServlet;
 import org.svearike.jeller.api.GetDeviceServlet;
@@ -101,8 +103,8 @@ public class Main
 		server.setHandler(handlers);
 		server.start();
 
-//		LetsEncrypt enc = new LetsEncrypt();
-//		enc.fetchCertificate(KEYSTORE_PATH, KEYSTORE_PASS, Arrays.asList("jeller2.blunda.org"));
+		LetsEncrypt enc = new LetsEncrypt();
+		enc.fetchCertificate(KEYSTORE_PATH, KEYSTORE_PASS, Arrays.asList("jeller2.blunda.org"));
 		server.join();
 	}
 
